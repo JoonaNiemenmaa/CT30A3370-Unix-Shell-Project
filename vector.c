@@ -1,3 +1,4 @@
+/* Joona Niemenmaa 001823383 16.07.2025 vector.c */
 #include "vector.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -40,3 +41,5 @@ void tulostaVektori(char **aVektori) {
     }
     return;
 }
+
+/* eof */
