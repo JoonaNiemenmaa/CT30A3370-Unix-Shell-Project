@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
     char *aSatsi = NULL;
     FILE *Virta = NULL;
 
-    if (argc > 1) {
+    if (argc > 2) {
         fprintf(stderr, "wish: Virhe, luettavia tiedostoja voi määrittää vain yhden\n");
         exit(1);
     } else if (argc == 2) {
@@ -123,11 +123,9 @@ int main(int argc, char **argv) {
                                 exit(1);
                             } else if (iPaluuarvo > 0) {
                                 iLapsia++;
-                                if (iLapset == NULL) {
-                                    if ((iLapset = (int *)malloc(sizeof(int) * iLapsia)) == NULL) {
-                                        perror("wish: Muistin varaaminen epäonnistui, lopetetaan");
-                                        exit(1);
-                                    }
+                                if ((iLapset = (int *)realloc(iLapset, sizeof(int) * iLapsia)) == NULL) {
+                                    perror("wish: Muistin varaaminen epäonnistui, lopetetaan");
+                                    exit(1);
                                 }
                                 iLapset[iLapsia - 1] = iPaluuarvo;
                             }
@@ -150,7 +148,7 @@ int main(int argc, char **argv) {
         }
 
         for (int i = 0; i < iLapsia; i++) {
-            waitpid(iLapset[0], NULL, 0);
+            waitpid(iLapset[i], NULL, 0);
         }
 
         if (iLapset != NULL) {
@@ -165,6 +163,15 @@ int main(int argc, char **argv) {
         if (Virta == stdin) {
             printf(PROMPT);
         }
+    }
+
+    if (aSatsi != NULL) {
+        fclose(Virta);
+    }
+
+    if (aRivi != NULL) {
+        free(aRivi);
+        aRivi = NULL;
     }
 
     vapautaPolut(aPolut);

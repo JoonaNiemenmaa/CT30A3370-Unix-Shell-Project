@@ -40,7 +40,7 @@ char **muodostaPolut(char **aArgumentit, int iArgumentit) {
     char *aPolku =  NULL;
     if (iArgumentit > 1) {
         for (int i = 1; i < iArgumentit; i++) {
-            if ((aPolku = (char *)malloc(sizeof(strlen(aArgumentit[i]) + 1))) == NULL) {
+            if ((aPolku = (char *)malloc(sizeof(char) * (strlen(aArgumentit[i]) + 1))) == NULL) {
                 perror("path: Muistin varaamisessa virhe, lopetetaan");
                 exit(1);
             }
