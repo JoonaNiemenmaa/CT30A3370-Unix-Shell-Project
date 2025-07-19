@@ -12,7 +12,7 @@ char *haePolku(char *aKomento, char **aPolut) {
     if (aPolut != NULL) {
         while (*ptr != NULL) {
             if ((aPolku = (char *)malloc(strlen(*ptr) + strlen(aKomento) + 2)) == NULL) {
-                perror("Muistin varaamisessa virhe, lopetetaan");
+                perror("wish: Muistin varaamisessa virhe, lopetetaan");
                 exit(1);
             }
 
@@ -41,14 +41,14 @@ char **muodostaPolut(char **aArgumentit, int iArgumentit) {
     if (iArgumentit > 1) {
         for (int i = 1; i < iArgumentit; i++) {
             if ((aPolku = (char *)malloc(sizeof(strlen(aArgumentit[i]) + 1))) == NULL) {
-                perror("Muistinvarauksessa virhe, lopetetaan");
+                perror("path: Muistin varaamisessa virhe, lopetetaan");
                 exit(1);
             }
             strcpy(aPolku, aArgumentit[i]);
             aPolut = lisaaVektoriin(aPolut, aPolku);
         }
     } else {
-        printf("Virhe, määritä path-muuttujat\n");
+        fprintf(stderr, "path: Virhe, komento tarvitsee ainakin yhden argumentin\n");
     }
     return aPolut;
 }

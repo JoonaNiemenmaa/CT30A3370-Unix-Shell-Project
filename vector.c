@@ -19,7 +19,7 @@ char **lisaaVektoriin(char **aVektori, char *aArvo) {
     int iKoko = vektorinPituus(aVektori);
     /* Vektorin kokoon lisätään kaksi, koska vektorin tulee loppua NULL-pointeriin */
     if ((aVektori = (char **)realloc(aVektori, sizeof(char *) * (iKoko + 2))) == NULL) {
-        perror("Muistin varaamisessa virhe, lopetetaan");
+        perror("wish: Muistin varaaminen epäonnistui, lopetetaan");
         exit(1);
     }
 
