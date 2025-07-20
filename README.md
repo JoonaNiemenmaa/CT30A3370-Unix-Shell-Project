@@ -1,6 +1,6 @@
 # Projekti III: Unix Shell
 
-Toiseksi projektiksi tein Unix Shell:in eli komentorivipäätteen. Lähdekoodi löytyy täältä. Projekti koostuu kolmesta moduulista, path, vector ja wish. Wish sisältää ohjelman pääohjelman ja sisältää shell:in päätoiminnallisuuden. Vector implementoi vektori-tietorakenteen merkkijonoille ja path sisältää ohjelman path-muuttujan hallitsemiseen liittyvät funktiot.
+Toiseksi projektiksi tein Unix Shell:in eli komentorivipäätteen. Projekti koostuu kolmesta moduulista, path, vector ja wish. Wish sisältää ohjelman pääohjelman ja sisältää shell:in päätoiminnallisuuden. Vector implementoi vektori-tietorakenteen merkkijonoille ja path sisältää ohjelman path-muuttujan hallitsemiseen liittyvät funktiot.
 
 Tässä pieni kaavio ohjelman rakenteesta:
 
